@@ -1,0 +1,407 @@
+/** =========================== */
+/** === selectores globales === */
+/** =========================== */
+
+/** === variables === */
+
+:root {
+
+    /** fuentes */
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    /** paleta colores */
+    --primario: #784d3c;
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html {
+    box-sizing: border-box;     /* border, padding...  no afecte el ancho de nuestros elementos */
+    font-size: 62.5%;           /* 1rem = 10px */       
+}
+
+*,*:before, *:after {
+    box-sizing: inherit;        /* heredar del elemento padre, html */
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;             /* interlineado */
+}
+
+/** ================ */
+/** === globales === */
+/** ================ */
+
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    /* centrar el contenido horizontalmente */
+    margin: 0 auto;             
+}
+
+a {
+    text-decoration: none;      /* quitar linea abajo de los enlaces */
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading);
+    /** interlineado */
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+    box-shadow: -2px 3px 14px 3px rgba(0,0,0,0.2);
+    /*
+    -webkit-box-shadow: -5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    -5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         -5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    */
+}
+
+/** ================== */
+/** === utilidades === */
+/** ================== */
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+/** ================ */
+/** === cabecera === */
+/** ================ */
+
+.header {
+    background-image: url(../img/banner.webp);   
+    height: 60rem;
+    /* que tome todo el espacio disponible */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* al disminuir fluye hacia el centro, centrar horizontal y vertical */
+    background-position: center center;
+    /** sombra abajo */
+    -webkit-box-shadow: -1px 3px 9px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    -1px 3px 9px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         -1px 3px 9px 0px rgba(50, 50, 50, 0.75);
+}
+
+.header__texto {
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+    .header__texto {
+        /** colocar al centro de la cabecera */
+        margin-top: 15rem;      
+    }
+}
+
+.barra {
+    /** separar de arriba */
+    padding-top: 4rem;   
+}
+
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between; /** alinear hor */
+        align-items: center;            /** alinear ver */
+    }
+}
+
+.logo {
+    color: var(--blanco);
+}
+
+.logo__nombre {
+    font-weight: normal;
+}
+
+.logo__bold {
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: flex;
+        gap: 2rem;      /** separación elementos */
+    }
+}
+
+.navegacion__enlace {
+    display: block;     /** elementos debajo del otro */
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+/** =========================== */
+/** === contenido principal === */
+/** =========================== */
+
+@media (min-width: 768px) {
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;   
+}
+
+.entrada:last-of-type {
+    border: none;
+    /** eliminar línea parte inferior */
+    margin-bottom: 0;
+}
+
+.boton {
+    /** en móviles que tome todo el espacio disponible */
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    /** extender botón 1 arr abj 3 izq der*/ 
+    padding: 1rem 3rem;  
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    /** separación hacia abajo */
+    margin-bottom: 2rem;
+    border: none;
+    /** sombra */
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+   .boton {
+       /** a partir de 768px el botón es más pequeño */
+       display: inline-block;
+   }
+}
+
+.boton--primario {
+    background-color: var(--negro);
+}
+
+/** =============== */
+/** === sidebar === */
+/** =============== */
+
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+.cursos {
+    /** quitar viñeta al ul */
+    list-style: none;
+}
+
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type {
+    /** quitar al último curso el borde de abajo */ 
+    border: none;  
+    margin-bottom: 0;
+}
+
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.widget-curso__info {
+    font-weight: normal;
+}
+
+.widget-curso__label,
+.widget-curso__info {
+    font-size: 2rem;
+}
+
+/** ============== */
+/** === footer === */
+/** ============== */
+
+.footer {
+    background-color: var(--negro);
+    /** padding abajo de la barra */
+    padding-bottom: 3rem;
+    /** separación elemento de arriba */
+    margin-top: 4rem;
+
+    /** sombra arriba */
+    -webkit-box-shadow: 0px -3px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px -3px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px -3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+/** ===================================================== */
+/** ===================================================== */
+/** ===================================================== */
+
+/** ===================== */
+/** === nosotros.html === */
+/** ===================== */
+
+/** ====================== */
+/** === sobre nosotros === */
+/** ====================== */
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        display: flex;
+        /** separación entre elementos */
+        gap: 2rem;
+    }
+
+    .sobre-nosotros__imagen, 
+    .sobre-nosotros__texto {
+        /** que ambos elementos ocupen el 50% */
+        /** también podemos usar "width" */
+        flex-basis: 50%;        
+    }
+}
+
+/** ===================================================== */
+/** ===================================================== */
+/** ===================================================== */
+
+/** =================== */
+/** === cursos.html === */
+/** =================== */
+
+.curso {
+    /** línea de separación */
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        /** img ocupa 1 fr y texto 2 fr */
+        grid-template-columns: 1fr 2fr;
+        /** separación entre elementos */
+        column-gap: 2rem;
+    }
+}
+
+.curso:last-of-type {
+    /** quitar la última línea para el último curso */
+    border: none;
+}
+
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.curso__info {
+    font-weight: normal;
+}
+
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+
+/** ===================================================== */
+/** ===================================================== */
+/** ===================================================== */
+
+/** ===================== */
+/** === contacto.html === */
+/** ===================== */
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    /** altura imagen */
+    height: 40rem;
+    /** que ocupe todo el espacio y que no se repita */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /** sombra abajo */
+    -webkit-box-shadow: -1px 3px 9px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    -1px 3px 9px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         -1px 3px 9px 0px rgba(50, 50, 50, 0.75);
+}
+
+.formulario {
+    background-color: var(--blanco);
+    /** llevar formulario hacia arriba 50px */
+    margin: -5rem auto 0 auto;
+    /** ancho del 95%, no toma todo el espacio */
+    width: 95%;
+    /** ensanchar en todas las direcciones hacia dentro */
+    padding: 5rem;
+    /** sombra */
+    box-shadow: inset 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.campo {
+    display: flex;
+    /** separación entre campos */
+    margin-bottom: 2rem;
+    /** separación entre elementos */
+    gap: 2rem;
+}
+
+.campo__label {
+    /** deja fijo este tamaño para este elemento */
+    flex: 0 0 9rem;
+    text-align: right;
+}
+
+.campo__field {
+    /** factor crecimiento 1, toma lo que quede disponible */
+    flex: 1;
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea {
+    /** altura */
+    height: 20rem;   
+}
